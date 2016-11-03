@@ -68,3 +68,5 @@ DT[,value := ifelse(is.na(value), median(value, na.rm=TRUE), value), by=months]
 b_spline_creation <- function(vec, col_name,
                               knots_percentiles = seq(0,1, by=0.2),
                               polynomial_degrees = 3)
+
+tmp3[,paste0(names(tmp2)[i],"_s1")] <- data.frame(ns(tmp2[,i],4,knots=seq(qnt[1],qnt[2],length=5)[2:4])[,1])
